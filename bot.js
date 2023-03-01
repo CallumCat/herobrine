@@ -459,7 +459,7 @@ const updateStatus = function(){
 
 bot.on("ready",async ()=>{
 	console.log("Ready.");
-	bot.writeLog(bot, "startup");
+	// bot.writeLog(bot, "startup");
 	updateStatus();
 	setInterval(updateStatus, 600000);
 })
