@@ -8,7 +8,7 @@ module.exports = {
 		var categories = msg.guild.channels.filter(c => c.type == 4).length;
 		var humans = msg.guild.members.filter(m => !m.bot).length;
 		var bots = msg.guild.members.filter(m => m.bot).length;
-		var roles = msg.guild.roles.size <= 10 ? msg.guild.roles.map(r => `${r.name} (${r.id})`).join("\n") : "Use `hh!server roles` to view this server's roles";
+		var roles = msg.guild.roles.size <= 10 ? msg.guild.roles.map(r => `${r.name} (${r.id})`).join("\n") : "Use `fcm!server roles` to view this server's roles";
 
 		return {embed: {
 			author: {
