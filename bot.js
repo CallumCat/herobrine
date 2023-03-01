@@ -180,36 +180,36 @@ const setup = async () => {
 	return Promise.resolve();
 }
 
-bot.writeLog = (bot, type, msg) => {
-	let now = new Date();
-	let ndt = `${(now.getMonth() + 1).toString().length < 2 ? "0"+ (now.getMonth() + 1) : now.getMonth()+1}.${now.getDate().toString().length < 2 ? "0"+ now.getDate() : now.getDate()}.${now.getFullYear()}`;
-	if(!bot.fs.existsSync(`./logs/${ndt}.log`)){
-		bot.fs.writeFileSync(`./logs/${ndt}.log`,"===== LOG START =====",(err)=>{
-			console.log(`Error while attempting to write log ${ndt}\n${err.stack}`);
-		});
-	}
+// bot.writeLog = (bot, type, msg) => {
+// 	let now = new Date();
+// 	let ndt = `${(now.getMonth() + 1).toString().length < 2 ? "0"+ (now.getMonth() + 1) : now.getMonth()+1}.${now.getDate().toString().length < 2 ? "0"+ now.getDate() : now.getDate()}.${now.getFullYear()}`;
+// 	if(!bot.fs.existsSync(`./logs/${ndt}.log`)){
+// 		bot.fs.writeFileSync(`./logs/${ndt}.log`,"===== LOG START =====",(err)=>{
+// 			console.log(`Error while attempting to write log ${ndt}\n${err.stack}`);
+// 		});
+// 	}
 
-	bot.cur_logs = ndt;
+// 	bot.cur_logs = ndt;
 
-	try {
-		switch(type) {
-			case "msg":
-				var str = `\r\nTime: ${ndt} at ${now.getHours().toString().length < 2 ? "0"+ now.getHours() : now.getHours()}${now.getMinutes()}\nMessage: ${msg.content}\nUser: ${msg.author.username}#${msg.author.discriminator}\nGuild: ${(msg.guild!=undefined ? msg.guild.name + "(" +msg.guild.id+ ")" : "DMs")}\r\n--------------------`;
-				console.log(str);
-				bot.fs.appendFileSync(`./logs/${ndt}.log`,str);
-				break;
-			case "startup":
-				bot.fs.appendFileSync(`./logs/${ndt}.log`,"\n=== BOT READY ===");
-				break;
-			default:
-				console.log("Invalid log type");
-				bot.fs.appendFileSync(`./logs/${ndt}.log`,"Invalid log type");
-				break;
-		}
-	} catch(e) {
-		console.log(`Error while attempting to write log ${ndt}\n${e.stack}`)	
-	}
-}
+// 	try {
+// 		switch(type) {
+// 			case "msg":
+// 				var str = `\r\nTime: ${ndt} at ${now.getHours().toString().length < 2 ? "0"+ now.getHours() : now.getHours()}${now.getMinutes()}\nMessage: ${msg.content}\nUser: ${msg.author.username}#${msg.author.discriminator}\nGuild: ${(msg.guild!=undefined ? msg.guild.name + "(" +msg.guild.id+ ")" : "DMs")}\r\n--------------------`;
+// 				console.log(str);
+// 				bot.fs.appendFileSync(`./logs/${ndt}.log`,str);
+// 				break;
+// 			case "startup":
+// 				bot.fs.appendFileSync(`./logs/${ndt}.log`,"\n=== BOT READY ===");
+// 				break;
+// 			default:
+// 				console.log("Invalid log type");
+// 				bot.fs.appendFileSync(`./logs/${ndt}.log`,"Invalid log type");
+// 				break;
+// 		}
+// 	} catch(e) {
+// 		console.log(`Error while attempting to write log ${ndt}\n${e.stack}`)	
+// 	}
+// }
 
 bot.formatTime = (date) => {
 	if(typeof date == "string") date = new Date(date);
