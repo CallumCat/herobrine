@@ -10,11 +10,11 @@ module.exports = {
 			modules.forEach(m => m.commands = m.commands.map(c => c));
 
 			var embeds = [{embed: {
-				title: "Herobrine",
+				title: "Furry Castle Utility",
 				description: [
 					"*A multi-purpose moderation and fun bot for Discord*\n",
-					"I'm Herobrine! My job is to help admins manage their Discord server, ",
-					"as well as provide some other functionality that's useful for folks"
+					"I'm Troy! My job is to help admins manage Furry Castle, ",
+					"as well as provide some other functionality that's useful for staff"
 				].join(""),
 				fields: [
 					{
@@ -34,16 +34,16 @@ module.exports = {
 							"Tabbing through this embed by hitting the \u2b05 and \u27a1 ",
 							"reactions will give you a better idea of what each module ",
 							"does. You can also enable/disable specific modules, or get ",
-							"more info on a module using `hh!help [module]`"
+							"more info on a module using `fcm!help [module]`"
 						].join("")
 					},
 					{
 						name: "Customization",
 						value: [
 							"Your experience with me can be customized! You can:",
-							"- Create custom commands (`hh!cc`)",
-							"- Change my prefix (`hh!prefix`)",
-							"- Set your own command aliases (`hh!`)"
+							"- Create custom commands (`fcm!cc`)",
+							"- Change my prefix (`fcm!prefix`)",
+							"- Set your own command aliases (`fcm!`)"
 						].join("\n")
 					}
 				],
