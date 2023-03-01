@@ -3,8 +3,8 @@ var dblite = require('dblite');
 var {Pool} = require('pg');
 
 module.exports = async (bot) => {
-	// db = dblite("./data.sqlite","-header");
-	const db = new Pool();
+	db = dblite("./data.sqlite","-header");
+	// const db = new Pool();
 
 	await db.query(`
 		CREATE TABLE IF NOT EXISTS aliases (
