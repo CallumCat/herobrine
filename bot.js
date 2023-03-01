@@ -446,11 +446,11 @@ bot.parseCustomCommand = async function(bot, msg, args) {
 const updateStatus = function(){
 	switch(status){
 		case 0:
-			bot.editStatus({name: "hh!help -- in "+bot.guilds.size+" guilds."});
+			bot.editStatus({name: "fcm!help -- in "+bot.guilds.size+" guilds."});
 			status++;
 			break;
 		case 1:
-			bot.editStatus({name: "hh!help -- serving "+bot.users.size+" users."});
+			bot.editStatus({name: "fcm!help -- serving "+bot.users.size+" users."});
 			status--;
 			break;
 	}
