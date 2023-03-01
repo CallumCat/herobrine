@@ -1,5 +1,5 @@
 module.exports = {
-	help: () => "Get a little bit of love from Herobrine!",
+	help: () => "Get a little bit of love from Furry Castle Utilities!",
 	usage: () => [" - sends about 5 messages in a row that are meant to be affirming"],
 	execute: (bot, msg, args) =>{
 		var lb = 0;
